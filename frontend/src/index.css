@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
+@theme{
+    --font-display : Saira ,sans-serif;
+}
+
+@utility bg-gradient{
+    @apply bg-gradient-to-r  from-[#d225f5] to-[#9a0cf2]
+}
+
+.navbar{
+    @apply w-[100%] min-h-12  text-white text-lg font-display bg-[#0d71fc] flex justify-evenly items-center
+}
+
+.form-container{
+    @apply  font-display transition-all duration-300 shadow-lg ease-in-out hover:scale-105 hover:shadow-gray-500
+}
+
+.button {
+    @apply bg-[#0d71fc] text-black rounded-md h-10 w-13
+}
