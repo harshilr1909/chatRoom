@@ -8,14 +8,164 @@
     @apply bg-gradient-to-r  from-[#d225f5] to-[#9a0cf2]
 }
 
-.navbar{
-    @apply w-[100%] min-h-12  text-white text-lg font-display bg-[#0d71fc] flex justify-evenly items-center
+.chatbox-container{
+    @apply flex h-[calc(100vh)];
+}
+
+.sidebar{
+    @apply w-80 bg-gray-900 border-r border-gray-700 flex flex-col h-full;
+}
+
+.sidebar-header{
+    @apply p-4 border-b border-gray-700 flex justify-between items-center;
+}
+
+.sidebar-title{
+    @apply text-white text-xl font-bold;
+}
+
+.search-container{
+    @apply p-3;
+}
+
+.search-input{
+    @apply w-full px-3 py-2 rounded-lg bg-gray-800 text-white border border-gray-600 
+    focus:outline-none focus:border-blue-500 placeholder-gray-400;
+}
+
+.user-list{
+    @apply flex-1 overflow-y-auto;
+}
+
+.user-item{
+    @apply flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-gray-800 
+    transition-colors border-b border-gray-800;
+}
+
+.user-item-active{
+    @apply bg-gray-800 border-l-2 border-l-blue-500;
+}
+
+.user-avatar{
+    @apply w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center 
+    text-white font-bold text-sm flex-shrink-0;
+}
+
+.user-name{
+    @apply text-white font-medium truncate;
+}
+
+.no-users{
+    @apply text-gray-400 text-sm text-center py-4;
+}
+
+.chat-area{
+    @apply flex-1 flex flex-col bg-gray-950 h-full;
+}
+
+.chat-header{
+    @apply flex items-center gap-3 p-4 border-b border-gray-700 bg-gray-900;
+}
+
+.chat-header-avatar{
+    @apply w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center 
+    text-white font-bold text-sm;
+}
+
+.chat-header-name{
+    @apply text-white font-bold text-lg;
+}
+
+.messages-container{
+    @apply flex-1 overflow-y-auto p-4 flex flex-col gap-2;
+}
+
+.message-bubble{
+    @apply max-w-[70%] px-4 py-2 rounded-2xl;
+}
+
+.message-sent{
+    @apply bg-blue-600 text-white self-end rounded-br-sm;
+}
+
+.message-received{
+    @apply bg-gray-800 text-white self-start rounded-bl-sm;
+}
+
+.message-text{
+    @apply text-sm;
+}
+
+.message-time{
+    @apply text-[10px] opacity-70 mt-1 block text-right;
+}
+
+.no-messages{
+    @apply text-gray-500 text-center mt-10;
+}
+
+.message-form{
+    @apply flex gap-2 p-4 border-t border-gray-700 bg-gray-900;
+}
+
+.message-input{
+    @apply flex-1 px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-600 
+    focus:outline-none focus:border-blue-500 placeholder-gray-400;
+}
+
+.send-button{
+    @apply px-6 py-2 bg-blue-600 text-white font-medium rounded-lg 
+    hover:bg-blue-700 transition-colors;
+}
+
+.no-chat-selected{
+    @apply flex-1 flex items-center justify-center text-gray-500 text-lg;
+}
+
+.welcome-card{
+    @apply font-display transition-all duration-300 shadow-lg ease-in-out hover:scale-105 hover:shadow-gray-500
 }
 
 .form-container{
     @apply  font-display transition-all duration-300 shadow-lg ease-in-out hover:scale-105 hover:shadow-gray-500
 }
 
+body{
+    @apply bg-black min-h-screen;
+}
+
 .button {
     @apply bg-[#0d71fc] text-black rounded-md h-10 w-13
+}
+
+.nav-logout{
+    @apply px-3 py-1 text-white rounded-md hover:bg-white/20 
+    transition-colors text-sm cursor-pointer;
+}
+
+.sidebar-tabs{
+    @apply flex border-b border-gray-700;
+}
+
+.sidebar-tab{
+    @apply flex-1 px-4 py-2 text-sm text-gray-400 text-center cursor-pointer 
+    hover:text-white transition-colors bg-transparent border-none;
+}
+
+.sidebar-tab-active{
+    @apply text-white border-b-2 border-b-blue-500;
+}
+
+.request-badge{
+    @apply ml-1 px-1.5 py-0.5 text-xs bg-red-500 text-white rounded-full;
+}
+
+.add-friend-button{
+    @apply ml-auto px-2 py-1 text-xs bg-blue-600 text-white rounded 
+    hover:bg-blue-700 transition-colors;
+}
+
+.accept-button{
+    @apply ml-auto px-2 py-1 text-xs bg-green-600 text-white rounded 
+    hover:bg-green-700 transition-colors;
 }
