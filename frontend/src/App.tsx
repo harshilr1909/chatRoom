@@ -35,7 +35,7 @@ function App() {
         (
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 px-6 py-8 mx-auto bg-black min-h-screen">
           <div className="welcome-card w-full bg-gray-900 rounded-lg text-white border-2 border-gray-700 sm:max-w-lg xl:p-0">
-          <div className="flex flex-col items-center p-10 space-y-6">
+          <div className="flex flex-col items-center p-6 sm:p-10 space-y-6">
           <img src={logo} alt="logo" className='h-[120px] w-[180px]'/>
           <h1 className="text-3xl font-bold text-center text-white">ChatRoom</h1>
           <p className="text-gray-400 text-center text-base leading-relaxed">

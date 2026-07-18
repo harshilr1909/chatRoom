@@ -9,11 +9,11 @@
 }
 
 .chatbox-container{
-    @apply flex h-[calc(100vh)];
+    @apply flex h-[calc(100vh)] flex-col md:flex-row;
 }
 
 .sidebar{
-    @apply w-80 bg-gray-900 border-r border-gray-700 flex flex-col h-full;
+    @apply w-full bg-gray-900 border-r border-gray-700 flex flex-col h-full md:w-80;
 }
 
 .sidebar-header{
@@ -168,4 +168,24 @@ body{
 .accept-button{
     @apply ml-auto px-2 py-1 text-xs bg-green-600 text-white rounded 
     hover:bg-green-700 transition-colors;
+}
+
+.sidebar-open{
+    @apply block;
+}
+
+.sidebar-closed{
+    @apply hidden md:block;
+}
+
+.chat-area-hidden{
+    @apply hidden md:flex;
+}
+
+.chat-area-visible{
+    @apply flex;
+}
+
+.back-button{
+    @apply text-white text-xl mr-2 cursor-pointer md:hidden;
 }

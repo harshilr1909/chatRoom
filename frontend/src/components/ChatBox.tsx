@@ -30,6 +30,7 @@ const ChatBox = ({ userName, setSignedIn, setLoggedIn }: { userName: string; set
     const [messages, setMessages] = useState<Message[]>([]);
     const [msg, setMsg] = useState('');
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const [showSidebar, setShowSidebar] = useState(true);
 
     const handleLogout = async () => {
         closeWebSocket();
@@ -166,6 +167,7 @@ const ChatBox = ({ userName, setSignedIn, setLoggedIn }: { userName: string; set
         setIsSearching(false);
         setSearchQuery('');
         setSearchResults([]);
+        setShowSidebar(false);
         try {
             const res = await fetch(`/new/messages/${userName}/${otherUser}`);
             const data = await res.json();
@@ -205,7 +207,7 @@ const ChatBox = ({ userName, setSignedIn, setLoggedIn }: { userName: string; set
 
     return (
         <div className="chatbox-container">
-            <div className="sidebar">
+            <div className={`sidebar ${showSidebar ? 'sidebar-open' : 'sidebar-closed'}`}>
                 <div className="sidebar-header">
                     <h2 className="sidebar-title">Messages</h2>
                     <button className="nav-logout" onClick={handleLogout}>Logout</button>
@@ -289,10 +291,11 @@ const ChatBox = ({ userName, setSignedIn, setLoggedIn }: { userName: string; set
                 </div>
             </div>
 
-            <div className="chat-area">
+            <div className={`chat-area ${showSidebar ? 'chat-area-hidden' : 'chat-area-visible'}`}>
                 {selectedUser ? (
                     <>
                         <div className="chat-header">
+                            <button className="back-button" onClick={() => setShowSidebar(true)}>←</button>
                             <div className="chat-header-avatar">{selectedUser.charAt(0).toUpperCase()}</div>
                             <span className="chat-header-name">{selectedUser}</span>
                         </div>
