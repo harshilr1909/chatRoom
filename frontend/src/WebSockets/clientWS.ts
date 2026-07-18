@@ -10,7 +10,7 @@ export interface WsCallbacks {
 let socket: WebSocket | null = null;
 
 export function connectWebSocket(username: string, callbacks: WsCallbacks): WebSocket {
-    socket = new WebSocket("ws://localhost:3001");
+    socket = new WebSocket(import.meta.env.VITE_WS_URL);
 
     socket.onopen = () => {
         socket?.send(JSON.stringify({ type: "identify", username }));

@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import signInRoute from './routes/signInRoute.ts';
@@ -13,15 +14,15 @@ import cookieSession from 'cookie-session';
 const app = express();
 const server = http.createServer(app);
 const wss = setupWebSocket(server);
-const port = 3001;
+const port = process.env.PORT || 3001;
 const cookieOptions = {
     name:'session',
-    secret:'Itsasupersecretkey',
+    secret: process.env.SESSION_SECRET || 'fallback-dev-secret',
     httpOnly:true,
     maxAge:  (7*24*60*60*1000)
 }
 
-app.use(cors({origin:"http://localhost:5173" ,credentials:true}));
+app.use(cors({origin: process.env.CORS_ORIGIN || "http://localhost:5173", credentials:true}));
 app.use(express.json());
 app.use(cookieSession(cookieOptions));
 
