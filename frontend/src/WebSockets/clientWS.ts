@@ -10,7 +10,8 @@ export interface WsCallbacks {
 let socket: WebSocket | null = null;
 
 export function connectWebSocket(username: string, callbacks: WsCallbacks): WebSocket {
-    socket = new WebSocket(import.meta.env.VITE_WS_URL);
+    const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    socket = new WebSocket(`${wsProtocol}//${window.location.host}`);
 
     socket.onopen = () => {
         socket?.send(JSON.stringify({ type: "identify", username }));

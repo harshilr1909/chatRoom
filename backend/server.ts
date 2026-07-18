@@ -44,9 +44,10 @@ app.use('/new/messages',MessageRoute);
 app.use('/new/users',UsersRoute);
 app.use('/new/friends',FriendRoute);
 
-
+const distPath = path.join(__dirname, '..', 'frontend', 'dist');
+app.use(express.static(distPath));
 app.get('/{*path}', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
+    res.sendFile(path.join(distPath, 'index.html'));
 });
 
 server.listen(port,()=>{
