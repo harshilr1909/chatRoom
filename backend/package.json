@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "tsx server.ts"
+  },
   "dependencies": {
     "@types/bcrypt": "^6.0.0",
     "@types/cors": "^2.8.19",
