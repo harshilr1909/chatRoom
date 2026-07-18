@@ -10,6 +10,7 @@ import con from './middlewares/connectToDB.ts';
 import setupWebSocket from './wsServer.ts';
 import http from 'http';
 import cookieSession from 'cookie-session';
+import path from 'path';
 
 const app = express();
 const server = http.createServer(app);
@@ -34,6 +35,7 @@ con.connect((err,result) => {
     }
 });
 
+app.use(express.static(path.join(__dirname,"dist")));
 
 app.use('/new',signInRoute);
 app.use('/new/login',logInRoute);
@@ -41,8 +43,8 @@ app.use('/new/messages',MessageRoute);
 app.use('/new/users',UsersRoute);
 app.use('/new/friends',FriendRoute);
 
-app.get('/',(req,res) => {
-    res.send("Backend working");
+app.get('*',(req,res) => {
+    res.sendFile(path.join(__dirname,'dist','index.html'));
 });
 
 server.listen(port,()=>{
