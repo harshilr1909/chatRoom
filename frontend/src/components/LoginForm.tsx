@@ -94,7 +94,7 @@ const LoginForm = ({hasAcc,setHasAcc,loggedIn,setLoggedIn,setUserName}: LoginFor
 	Don't have an account yet? 
 	<a 
 	href="#" className="font-medium text-blue-400 hover:text-white"
-	onClick={() => setHasAcc(true)}
+	onClick={() => setHasAcc(false)}
 	>
 	Sign in
 	</a>
