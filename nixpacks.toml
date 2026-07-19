@@ -1,0 +1,4 @@
+# Pin Node to a version available in Railway's nixpkgs pin.
+# nodejs_24 is not defined in the current pin → build fails with "undefined variable".
+[variables]
+NIXPACKS_NODE_VERSION = "22"
