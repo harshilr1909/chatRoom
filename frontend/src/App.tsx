@@ -49,7 +49,7 @@ function App() {
           <LoginForm
           hasAcc={hasAcc} setHasAcc={setHasAcc} loggedIn={loggedIn} setLoggedIn={setLoggedIn} setUserName={setUserName}>
           </LoginForm>:
-          <SigninForm signedIn={signedIn} setSignedIn={setSignedIn} setHasAcc={setHasAcc}></SigninForm>
+          <SigninForm signedIn={signedIn} setSignedIn={setSignedIn} setHasAcc={setHasAcc} setLoggedIn={setLoggedIn} onSignUp={setUserName}></SigninForm>
           }
           </div>
         )

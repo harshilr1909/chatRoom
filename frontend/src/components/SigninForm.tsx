@@ -4,9 +4,11 @@ interface SigninFormProps {
     signedIn: boolean;
     setSignedIn: (val: boolean) => void;
     setHasAcc: (val: boolean) => void;
+    setLoggedIn: (val: boolean) => void;
+    onSignUp: (username: string) => void;
 }
 
-const SigninForm = ({signedIn,setSignedIn,setHasAcc}: SigninFormProps) => {
+const SigninForm = ({signedIn,setSignedIn,setHasAcc,setLoggedIn,onSignUp}: SigninFormProps) => {
     const [email,setEmail] = useState('');
     const [pass,setPass] = useState('');
     const [username,setUserName] = useState('');
@@ -42,6 +44,8 @@ const SigninForm = ({signedIn,setSignedIn,setHasAcc}: SigninFormProps) => {
 	}else{
 	    console.log(data);
 	    setSignedIn(true);
+	    setLoggedIn(true);
+	    onSignUp(username);
 	}
     }
 
