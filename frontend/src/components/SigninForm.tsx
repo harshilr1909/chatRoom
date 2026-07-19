@@ -117,7 +117,7 @@ const SigninForm = ({signedIn,setSignedIn,setHasAcc}: SigninFormProps) => {
 	Already have an account? 
 	<a 
 	href="#" className="font-medium text-blue-400 hover:text-white"
-	onClick={() => setHasAcc(false)}
+	onClick={() => setHasAcc(true)}
 	>
 	Log in
 	</a>
